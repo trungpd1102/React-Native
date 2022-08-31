@@ -1,17 +1,19 @@
 import { StyleSheet } from 'react-native';
+import color from './constants/color';
 
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#CFD2CF',
-		paddingVertical: 40,
+		backgroundColor: color.background,
+		paddingTop: 40,
+		paddingBottom: 20,
 		paddingHorizontal: 18,
 	},
 	body: {
-		height: '100%',
+		flex: 1,
 		__title: {
 			fontSize: 24,
-			color: '#EB1D36',
+			color: color.primary,
 			fontWeight: 'bold',
 		},
 		__list: {
@@ -20,9 +22,7 @@ const styles = StyleSheet.create({
 		},
 	},
 
-	input: {
-		flex: 1,
-	},
+	input: {},
 });
 
 export default styles;
