@@ -18,6 +18,12 @@ const styles = StyleSheet.create({
 			borderRadius: 6,
 			justifyContent: 'center',
 			alignItems: 'center',
+			evev: {
+				backgroundColor: color.secondary,
+			},
+			odd: {
+				backgroundColor: color.itemOdd,
+			},
 		},
 		__titleText: {
 			fontSize: 14,

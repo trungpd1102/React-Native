@@ -3,14 +3,18 @@ import React from 'react';
 
 import styles from './style';
 
-const Task = () => {
+const Task = (props) => {
+	const { number } = props;
+	const numberText = number < 10 ? `0${number}` : number;
+	const itemBg = number % 2 === 0 ? styles.item.__title.odd : styles.item.__title.even;
+
 	return (
-		<TouchableOpacity>
+		<TouchableOpacity onPress={props.handleDeleteTask}>
 			<View style={styles.item}>
-				<View style={styles.item.__title}>
-					<Text style={styles.item.__titleText}>01</Text>
+				<View style={[styles.item.__title, itemBg]}>
+					<Text style={styles.item.__titleText}>{numberText}</Text>
 				</View>
-				<Text style={styles.item.__content}>Learn React Native</Text>
+				<Text style={styles.item.__content}>{props.task}</Text>
 			</View>
 		</TouchableOpacity>
 	);

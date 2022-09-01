@@ -5,4 +5,6 @@ export default {
 	white: '#FFFFFF',
 	secondary: '#FA9494',
 	textGray: '#333333',
+	itemOdd: '#006E7F',
+	itemEven: '#F8CB2E',
 };
