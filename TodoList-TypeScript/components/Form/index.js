@@ -31,6 +31,7 @@ const Form = (props) => {
 		<KeyboardAvoidingView
 			style={styles.addTask}
 			behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+			keyboardVerticalOffset={15}
 		>
 			<TextInput
 				value={task}
