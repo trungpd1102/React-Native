@@ -7,10 +7,19 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		backgroundColor: color.backgroundItem,
 		marginVertical: 6,
+		marginHorizontal: 18,
 		paddingVertical: 8,
 		paddingHorizontal: 14,
 		borderRadius: 8,
 		alignItems: 'center',
+
+		// Shadow for iOS
+		shadowOpacity: 0.15,
+		shadowOffset: {
+			width: 5,
+			height: 5,
+		},
+		shadowRadius: 5,
 		__title: {
 			width: 46,
 			height: 34,

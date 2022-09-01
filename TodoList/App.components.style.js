@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
 		backgroundColor: color.background,
 		paddingTop: 40,
 		paddingBottom: 20,
-		paddingHorizontal: 18,
 	},
 	body: {
 		flex: 1,
@@ -15,6 +14,7 @@ const styles = StyleSheet.create({
 			fontSize: 24,
 			color: color.primary,
 			fontWeight: 'bold',
+			marginLeft: 20,
 		},
 		__list: {
 			height: '100%',
