@@ -70,7 +70,7 @@ const Task = (props) => {
 					<View style={[styles.task.__title, itemBg]}>
 						<Text style={styles.task.__titleText}>{numberText}</Text>
 					</View>
-					<Text style={styles.task.__content}>{task}</Text>
+					<Text style={styles.task.__content}>{task.task}</Text>
 				</Animated.View>
 			</PanGestureHandler>
 

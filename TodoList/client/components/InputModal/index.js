@@ -5,10 +5,10 @@ import styles from './style';
 
 const App = (props) => {
 	const [modalVisible, setModalVisible] = useState(false);
-	const [editingTask, setEditingTask] = useState('');
+	const [editingTask, setEditingTask] = useState({});
 
-	const showModal = (data) => {
-		setEditingTask(data.task);
+	const showModal = (task) => {
+		setEditingTask(task);
 		setModalVisible(true);
 	};
 
@@ -43,8 +43,8 @@ const App = (props) => {
 						<TextInput
 							multiline={true}
 							style={styles.input}
-							value={editingTask}
-							onChangeText={(text) => setEditingTask(text)}
+							value={editingTask.task}
+							onChangeText={(text) => setEditingTask({ ...editingTask, task: text })}
 						/>
 						<View style={styles.modalButtonGroup}>
 							<Pressable style={[styles.button, styles.buttonYes]} onPress={onPressOK}>

@@ -6,7 +6,7 @@ const getAllTasks = async (req, res, next) => {
 		const tasks = await Task.findAll();
 		console.log({ tasks });
 		if (tasks.length >= 0) {
-			res.status(200).json({ data: tasks });
+			res.status(200).json({ message: 'Get all tasks successfully!', docContent: tasks });
 		}
 	} catch (error) {
 		console.log('error: ' + error);
@@ -25,7 +25,7 @@ const getTaskById = async (req, res, next) => {
 
 		const task = await Task.findByPk(id);
 		console.log({ task });
-		res.status(200).json({ data: task });
+		res.status(200).json({ message: 'Get task successfully!', docContent: task });
 	} catch (error) {
 		console.log('error: ' + error);
 		res.status(500).json({ message: 'Something went wrong' });
@@ -46,7 +46,7 @@ const createTask = async (req, res, next) => {
 		await task.save();
 		console.log({ task });
 
-		res.status(200).json({ message: 'Create task successfully', data: task });
+		res.status(200).json({ message: 'Create task successfully', docContent: task });
 	} catch (error) {
 		console.log('error: ' + error);
 		res.status(500).json({ message: 'Something went wrong' });
@@ -57,7 +57,7 @@ const updateTaskById = async (req, res, next) => {
 	try {
 		const id = parseInt(req.params.id);
 		const newTask = req.body.task;
-		console.log(typeof id);
+		console.log({ newTask });
 
 		if (!id) {
 			res.status(400).json({ message: 'No task id provided' });
@@ -73,7 +73,7 @@ const updateTaskById = async (req, res, next) => {
 		await task.save();
 		console.log({ result });
 
-		res.status(200).json({ message: 'Update task successfully', data: result });
+		res.status(200).json({ message: 'Update task successfully', docContent: result });
 	} catch (error) {
 		console.log('error: ' + error);
 		res.status(500).json({ message: 'Something went wrong' });

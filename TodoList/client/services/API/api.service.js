@@ -1,10 +1,10 @@
 import axiosBase from 'axios';
 
-const apiUrl = '/';
+const apiUrl = '/api';
 
 export const axios = axiosBase.create({
 	// This is development host
-	baseURL: process.env.VUE_APP_BASE_URL,
+	baseURL: 'http://192.168.1.9:5000',
 });
 
 axios.defaults.headers = {
@@ -34,6 +34,11 @@ const ApiService = {
 
 	put(resource, body) {
 		return axios.put(`${apiUrl}/${resource}`, body).catch((err) => {
+			throw new Error(`ApiService: ${err}`);
+		});
+	},
+	patch(resource, body) {
+		return axios.patch(`${apiUrl}/${resource}`, body).catch((err) => {
 			throw new Error(`ApiService: ${err}`);
 		});
 	},

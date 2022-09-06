@@ -49,7 +49,7 @@ const TaskService = {
 	 */
 	async update(taskId, contents) {
 		try {
-			return await ApiService.put(`${serviceURL}/${taskId}`, contents);
+			return await ApiService.patch(`${serviceURL}/${taskId}`, contents);
 		} catch (errors) {
 			console.log('error:' + errors);
 		}

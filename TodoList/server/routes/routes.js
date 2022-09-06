@@ -10,15 +10,15 @@ import {
 
 const router = express.Router();
 
-router.get('/task', getAllTasks);
+router.get('/api/task/', getAllTasks);
 
-router.get('/task/:id', getTaskById);
+router.get('/api/task/:id', getTaskById);
 
-router.post('/task', createTask);
+router.post('/api/task/', createTask);
 
-router.patch('/task/:id', updateTaskById);
+router.patch('/api/task/:id', updateTaskById);
 
-router.delete('/task/:id', deleteTaskById);
+router.delete('/api/task/:id', deleteTaskById);
 
 router.get('/public', (req, res, next) => {
 	res.status(200).json({ message: 'here is your public resource' });

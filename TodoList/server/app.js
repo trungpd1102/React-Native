@@ -2,7 +2,7 @@ import express from 'express';
 
 import sequelize from './utils/database.js';
 
-import router from './router/router.js';
+import routes from './routes/routes.js';
 
 const app = express();
 
@@ -17,7 +17,7 @@ app.use((_, res, next) => {
 	next();
 });
 
-app.use(router);
+app.use(routes);
 
 sequelize.sync();
 
